@@ -1,8 +1,8 @@
 {
-  "name": "quasar-app-extension-tailwindcss",
-  "version": "0.1.5",
+  "name": "quasar-app-extension-tailwindcss-by-ovi",
+  "version": "0.1.6",
   "description": "Integration of TailwindCSS into Quasar Framework",
-  "author": "Matthias Sondermann <sondermann.m@gmail.com>",
+  "author": "Galatan Ovidiu <galatanovidiu@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/matzeso/quasar-app-extension-tailwindcss"
+    "url": "https://github.com/galatanovidiu/quasar-app-extension-tailwindcss"
   },
   "keywords": [
     "quasar",

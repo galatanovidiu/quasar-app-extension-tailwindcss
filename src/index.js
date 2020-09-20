@@ -11,7 +11,7 @@ function extendConf (conf) {
 }
 
 module.exports = function (api) {
-    api.compatibleWith('quasar', '^1.0.0')
+    api.compatibleWith('quasar', '^1.12.0')
     api.compatibleWith('@quasar/app', '^1.0.0||^2.0.0')
 
     const purgecss = require('@fullhuman/postcss-purgecss')({
@@ -23,7 +23,8 @@ module.exports = function (api) {
         ],
 
         // Include any special characters you're using in this regular expression
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+        whitelistPatterns: [/-(leave|enter|appear)(|-(to|from|active))$/, /^(?!(|.*?:)cursor-move).-move$/, /^router-link(|-exact)-active$/],
     })
 
     api.chainWebpack((cfg, {isClient, isServer}, api) => {
@@ -37,7 +38,7 @@ module.exports = function (api) {
 
         cfg.module
             .rule('tailwind')
-                .test(/\.css$/)
+                .test(/\.scss$/)
                 .include
                     .add(api.resolve.src('extensions/tailwindcss'))
                     .end()
